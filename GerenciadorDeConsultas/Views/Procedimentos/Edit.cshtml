@@ -1,0 +1,44 @@
+﻿@model GerenciadorDeConsultas.Models.Procedimento
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Procedimento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ProcedimentoID" />
+            <div class="form-group">
+                <label asp-for="ValorProcedimento" class="control-label"></label>
+                <input asp-for="ValorProcedimento" class="form-control" />
+                <span asp-validation-for="ValorProcedimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TempoProcedimento" class="control-label"></label>
+                <input asp-for="TempoProcedimento" class="form-control" />
+                <span asp-validation-for="TempoProcedimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescricaoProcedimento" class="control-label"></label>
+                <input asp-for="DescricaoProcedimento" class="form-control" />
+                <span asp-validation-for="DescricaoProcedimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
